@@ -7,7 +7,7 @@ const DashboardPage = lazy(() => import("@/pages/Dashboard"));
 const SchedulePage = lazy(() => import("@/pages/Schedule"));
 const AttendancePage = lazy(() => import("@/pages/AttendancePage"));
 const MarksPage = lazy(() => import("@/pages/MarksPage"));
-const CGPAPage = lazy(() => import("@/pages/CGPAPage"));
+const CGPAPage = lazy(() => import("@/pages/CGPA"));
 const AnalyticsPage = lazy(() => import("@/pages/AnalyticsPage"));
 const CalendarPage = lazy(() => import("@/pages/CalendarPage"));
 const FacultyPage = lazy(() => import("@/pages/FacultyPage"));

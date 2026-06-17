@@ -1,10 +1,6 @@
 import { useState, useMemo } from "react";
-import {
-  PastSemester,
-  CurrentSubject,
-  marksToGrade,
-  GRADE_POINTS,
-} from "./mockData";
+import { marksToGrade, GRADE_POINTS } from "./mockData";
+import type { PastSemester, CurrentSubject } from "./mockData";
 
 export function useCGPAEngine(
   initialPastSemesters: PastSemester[],

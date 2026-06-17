@@ -14,7 +14,7 @@ Inspired by the design philosophies of Apple, Linear, Vercel, Arc Browser, and R
 - [x] **Schedule:** Manage your classes and timetable.
 - [x] **Attendance:** Track, manage, and optimize your attendance.
 - [ ] **Marks:** Track your internal and external assessments.
-- [ ] **CGPA Planner:** Simulate and plan your grade point average.
+- [x] **CGPA Planner:** Simulate and plan your grade point average.
 - [ ] **Analytics:** Insights and trends across your academic data.
 - [ ] **Calendar:** Academic calendar, exam dates, and holidays.
 - [ ] **Faculty Finder:** Locate faculty cabins and view schedules.
