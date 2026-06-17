@@ -1,0 +1,121 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Flat color naming
+        "bg-primary": "hsl(0, 0%, 5.9%)",
+        "bg-secondary": "hsl(0, 0%, 10.2%)",
+        "bg-tertiary": "hsl(0, 0%, 14.5%)",
+        "bg-hover": "hsl(0, 0%, 16.5%)",
+        "surface-base": "hsl(0, 0%, 7.4%)",
+        "surface-elevated": "hsl(0, 0%, 12.2%)",
+        "surface-interactive": "hsl(0, 0%, 17.6%)",
+        "text-primary": "hsl(0, 0%, 96.1%)",
+        "text-secondary": "hsl(0, 0%, 62.7%)",
+        "text-tertiary": "hsl(0, 0%, 40%)",
+        "border-primary": "hsl(0, 0%, 17.6%)",
+        "border-secondary": "hsl(0, 0%, 22.7%)",
+        "accent-primary": "hsl(217.2, 100%, 53.3%)",
+        "accent-secondary": "hsl(221.2, 83.3%, 53.3%)",
+        "accent-hover": "hsl(217.2, 91.2%, 59.8%)",
+        "accent-light": "hsl(217.2, 91.2%, 59.8%)",
+        "success": "hsl(142.3, 71.8%, 45.3%)",
+        "warning": "hsl(38, 92.3%, 50.2%)",
+        "error": "hsl(0, 84.3%, 60.2%)",
+      },
+      fontFamily: {
+        sans: ["SF Pro Display", "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
+        mono: ["SF Mono", "Monaco", "Inconsolata", "monospace"],
+      },
+      fontSize: {
+        xs: ["12px", { lineHeight: "16px", letterSpacing: "-0.3px" }],
+        sm: ["14px", { lineHeight: "20px", letterSpacing: "-0.2px" }],
+        base: ["16px", { lineHeight: "24px", letterSpacing: "-0.2px" }],
+        lg: ["18px", { lineHeight: "28px", letterSpacing: "-0.3px" }],
+        xl: ["20px", { lineHeight: "28px", letterSpacing: "-0.4px" }],
+        "2xl": ["24px", { lineHeight: "32px", letterSpacing: "-0.5px" }],
+        "3xl": ["30px", { lineHeight: "36px", letterSpacing: "-0.6px" }],
+        "4xl": ["36px", { lineHeight: "44px", letterSpacing: "-0.8px" }],
+      },
+      spacing: {
+        xs: "4px",
+        sm: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "24px",
+        "2xl": "32px",
+        "3xl": "48px",
+        "4xl": "64px",
+      },
+      borderRadius: {
+        xs: "4px",
+        sm: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+      },
+      boxShadow: {
+        xs: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+        sm: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+        base: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+        md: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+        lg: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+        xl: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+        "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.3)",
+        glow: "0 0 20px 0 rgba(59, 130, 246, 0.4)",
+      },
+      backdropBlur: {
+        xs: "2px",
+        sm: "4px",
+        md: "8px",
+        lg: "12px",
+        xl: "16px",
+      },
+      animation: {
+        "fade-in": "fadeIn 0.5s ease-out",
+        "fade-up": "fadeUp 0.6s ease-out",
+        "scale-in": "scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
+        "slide-down": "slideDown 0.3s ease-out",
+        "shimmer": "shimmer 2s infinite",
+        "pulse-subtle": "pulseSubtle 2s ease-in-out infinite",
+        "glow-pulse": "glowPulse 3s ease-in-out infinite",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        fadeUp: {
+          "0%": { opacity: "0", transform: "translateY(8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        scaleIn: {
+          "0%": { opacity: "0", transform: "scale(0.95)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        slideDown: {
+          "0%": { opacity: "0", transform: "translateY(-8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "-1000px 0" },
+          "100%": { backgroundPosition: "1000px 0" },
+        },
+        pulseSubtle: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.8" },
+        },
+        glowPulse: {
+          "0%, 100%": { boxShadow: "0 0 20px rgba(59, 130, 246, 0.4)" },
+          "50%": { boxShadow: "0 0 30px rgba(59, 130, 246, 0.6)" },
+        },
+      },
+    },
+  },
+  plugins: [],
+};
