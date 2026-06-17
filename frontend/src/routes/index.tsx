@@ -4,7 +4,7 @@ import type { RouteObject } from "react-router";
 import AppShell from "@/layouts/AppShell";
 
 const DashboardPage = lazy(() => import("@/pages/Dashboard"));
-const SchedulePage = lazy(() => import("@/pages/SchedulePage"));
+const SchedulePage = lazy(() => import("@/pages/Schedule"));
 const AttendancePage = lazy(() => import("@/pages/AttendancePage"));
 const MarksPage = lazy(() => import("@/pages/MarksPage"));
 const CGPAPage = lazy(() => import("@/pages/CGPAPage"));

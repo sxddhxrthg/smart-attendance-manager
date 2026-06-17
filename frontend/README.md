@@ -11,7 +11,7 @@ Inspired by the design philosophies of Apple, Linear, Vercel, Arc Browser, and R
 
 ### Planned Modules (Phase 1-3)
 - [x] **Dashboard:** Your academic command center.
-- [ ] **Schedule:** Manage your classes and timetable.
+- [x] **Schedule:** Manage your classes and timetable.
 - [x] **Attendance:** Track, manage, and optimize your attendance.
 - [ ] **Marks:** Track your internal and external assessments.
 - [ ] **CGPA Planner:** Simulate and plan your grade point average.

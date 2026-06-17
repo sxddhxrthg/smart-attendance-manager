@@ -5,15 +5,16 @@ interface PageHeaderProps {
   subtitle?: string;
   icon?: React.ReactNode;
   actions?: React.ReactNode;
+  className?: string;
 }
 
-function PageHeader({ title, subtitle, icon, actions }: PageHeaderProps) {
+function PageHeader({ title, subtitle, icon, actions, className = "" }: PageHeaderProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="flex items-start justify-between gap-4 mb-8"
+      className={`flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 ${className}`}
     >
       <div className="flex items-center gap-4">
         {icon && (
