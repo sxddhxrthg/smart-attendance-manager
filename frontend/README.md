@@ -1,15 +1,62 @@
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Zenith Grade ⚡️
 
-Currently, two official plugins are available:
+Zenith Grade is an **Academic Operating System** designed for SRM students. What started as a simple attendance tracker is evolving into a cinematic, premium platform that unifies all academic needs into a single, cohesive experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## The Vision
 
-## React Compiler
+Inspired by the design philosophies of Apple, Linear, Vercel, Arc Browser, and Raycast, Zenith Grade provides a fast, keyboard-first, and beautifully animated interface.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Planned Modules (Phase 1-3)
+- **Dashboard:** Your academic command center.
+- **Schedule:** Manage your classes and timetable.
+- **Attendance:** Track, manage, and optimize your attendance.
+- **Marks:** Track your internal and external assessments.
+- **CGPA Planner:** Simulate and plan your grade point average.
+- **Analytics:** Insights and trends across your academic data.
+- **Calendar:** Academic calendar, exam dates, and holidays.
+- **Faculty Finder:** Locate faculty cabins and view schedules.
+- **Notes:** Organize your study materials.
+- **AI Assistant:** Your personal academic copilot.
+- **Placement Tracker:** Monitor applications and interviews.
+- **Study Planner:** Schedule tasks and prepare for exams.
+
+## Tech Stack
+- **Framework:** React 19 + TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS v4 (Theme-driven Architecture)
+- **Animations:** Framer Motion
+- **State Management:** Zustand
+- **Routing:** React Router v7
+- **Icons:** Lucide React
+
+## Development Setup
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm run dev
+
+# Run type checking
+pnpm run check
+
+# Build for production
+pnpm run build
+```
+
+## Architecture
+
+The project follows a modular, scalable structure:
+- `src/layouts/`: The App Shell, Sidebar, and core layout components.
+- `src/pages/`: Lazy-loaded feature modules.
+- `src/components/ui/`: Reusable, robust primitives (Buttons, Cards, Modals).
+- `src/store/`: Zustand stores for global state (Theme, Sidebar, Command Palette).
+- `src/constants/`: Centralized configurations (Navigation, Themes).
+- `src/hooks/`: Custom React hooks.
 
 ## Expanding the ESLint configuration
 

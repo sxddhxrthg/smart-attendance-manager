@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { BookOpen } from "lucide-react";
-import AddSubjectForm from "../components/AddSubjectForm";
-import SubjectCard from "../components/SubjectCard";
-import type { Subject } from "../types/subject";
+import { BookOpen, CheckSquare } from "lucide-react";
+import AddSubjectForm from "@/components/AddSubjectForm";
+import SubjectCard from "@/components/SubjectCard";
+import type { Subject } from "@/types/subject";
+import { PageHeader } from "@/components/ui";
 
-const STORAGE_KEY = "attendanceSubjects";
+const STORAGE_KEY = "zenith:subjects";
 
 const DEFAULT_SUBJECTS: Subject[] = [
   {
@@ -26,14 +27,15 @@ const DEFAULT_SUBJECTS: Subject[] = [
   },
 ];
 
-function HomePage() {
+function AttendancePage() {
   const [subjects, setSubjects] = useState<Subject[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Load subjects from localStorage on mount
   useEffect(() => {
     try {
-      const stored = localStorage.getItem(STORAGE_KEY);
+      // Try to load from new key first, fallback to old key for migration
+      const stored = localStorage.getItem(STORAGE_KEY) || localStorage.getItem("attendanceSubjects");
       if (stored) {
         setSubjects(JSON.parse(stored));
       } else {
@@ -67,7 +69,7 @@ function HomePage() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2,
+        delayChildren: 0.1,
       },
     },
   };
@@ -82,45 +84,23 @@ function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-bg-primary">
-      {/* Hero Header */}
-      <motion.header
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="border-b border-border-primary"
-      >
-        <div className="max-w-7xl mx-auto px-6 py-8 sm:px-8 sm:py-12">
-          <div className="flex items-center gap-4">
-            <div className="p-2 bg-accent-primary/10 rounded-lg backdrop-blur-sm">
-              <BookOpen className="w-6 h-6 text-accent-primary" />
-            </div>
-            <div>
-              <h1 className="text-display text-text-primary">
-                Zenith Grade
-              </h1>
-              <p className="text-text-secondary mt-2">
-                Track, manage, and optimize your attendance
-              </p>
-            </div>
-          </div>
-        </div>
-      </motion.header>
+    <div className="animate-entry">
+      <PageHeader
+        title="Attendance"
+        subtitle="Track, manage, and optimize your attendance"
+        icon={<CheckSquare className="w-5 h-5" />}
+      />
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-8 sm:px-8 sm:py-12">
-        {/* Add Subject Form Section */}
+      <div className="mt-8">
         <motion.div
           variants={itemVariants}
           initial="hidden"
           animate="visible"
-          transition={{ delay: 0.1 }}
           className="mb-12"
         >
           <AddSubjectForm onAddSubject={addSubject} />
         </motion.div>
 
-        {/* Subjects Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -134,29 +114,28 @@ function HomePage() {
           ))}
         </motion.div>
 
-        {/* Empty State */}
         {subjects.length === 0 && (
           <motion.div
             variants={itemVariants}
             initial="hidden"
             animate="visible"
-            className="flex flex-col items-center justify-center py-3xl text-center"
+            className="flex flex-col items-center justify-center py-20 text-center"
           >
-            <div className="p-lg bg-surface-interactive rounded-lg mb-lg">
-              <BookOpen className="w-8 h-8 text-text-tertiary" />
+            <div className="p-6 bg-[var(--surface-interactive)] rounded-lg mb-6">
+              <BookOpen className="w-8 h-8 text-[var(--text-tertiary)]" />
             </div>
-            <h2 className="text-heading-2 text-text-primary mb-4">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
               No subjects yet
             </h2>
-            <p className="text-text-secondary max-w-md">
+            <p className="text-[var(--text-secondary)] max-w-md">
               Add your first subject to start tracking attendance. You can manage
               multiple subjects and monitor your attendance at a glance.
             </p>
           </motion.div>
         )}
-      </main>
+      </div>
     </div>
   );
 }
 
-export default HomePage;
+export default AttendancePage;
