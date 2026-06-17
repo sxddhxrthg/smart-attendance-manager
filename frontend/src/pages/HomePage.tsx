@@ -97,7 +97,7 @@ function HomePage() {
             </div>
             <div>
               <h1 className="text-display text-text-primary">
-                Smart Attendance Manager
+                Zenith Grade
               </h1>
               <p className="text-text-secondary mt-2">
                 Track, manage, and optimize your attendance

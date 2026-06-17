@@ -1,3 +1,3 @@
-# Smart Attendance Manager
+# Zenith Grade
 
-AI-powered attendance tracking platform for college students.
+Attendance tracking and grade optimization platform for college students.
