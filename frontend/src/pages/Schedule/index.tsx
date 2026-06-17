@@ -28,7 +28,7 @@ export default function Schedule() {
     <div className="animate-entry pb-12">
       <PageHeader 
         title="Schedule" 
-        description="Your academic timetable and live tracking" 
+        subtitle="Your academic timetable and live tracking" 
       />
 
       <div className="mt-6 mb-8">
