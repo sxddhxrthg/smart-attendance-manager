@@ -1,53 +1,40 @@
-export function calculateAttendancePercentage(
+export function calculateAttendance(
   attendedClasses: number,
   totalClasses: number
-): number {
-  if (totalClasses === 0) {
-    return 0;
-  }
-
+) {
   return (attendedClasses / totalClasses) * 100;
 }
 
-export function isBelowTarget(
-  attendancePercentage: number,
-  targetAttendancePercentage: number
-): boolean {
-  return attendancePercentage < targetAttendancePercentage;
-}
-
-export function calculateSafeToMiss(
+export function classesNeededForTarget(
   attendedClasses: number,
   totalClasses: number,
-  targetAttendancePercentage: number
-): number {
-  let safeToMiss = 0;
+  targetPercentage: number
+) {
+  let attended = attendedClasses;
+  let total = totalClasses;
+  let count = 0;
 
-  while (
-    (attendedClasses / (totalClasses + safeToMiss + 1)) * 100 >=
-    targetAttendancePercentage
-  ) {
-    safeToMiss++;
+  while ((attended / total) * 100 < targetPercentage) {
+    attended++;
+    total++;
+    count++;
   }
 
-  return safeToMiss;
+  return count;
 }
 
-export function calculateClassesNeeded(
+export function classesCanBunk(
   attendedClasses: number,
   totalClasses: number,
-  targetAttendancePercentage: number
-): number {
-  let classesNeeded = 0;
+  targetPercentage: number
+) {
+  let total = totalClasses;
+  let count = 0;
 
-  while (
-    ((attendedClasses + classesNeeded) /
-      (totalClasses + classesNeeded)) *
-      100 <
-    targetAttendancePercentage
-  ) {
-    classesNeeded++;
+  while ((attendedClasses / (total + 1)) * 100 >= targetPercentage) {
+    total++;
+    count++;
   }
 
-  return classesNeeded;
+  return count;
 }
