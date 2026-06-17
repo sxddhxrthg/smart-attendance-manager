@@ -1,29 +1,61 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { BookOpen } from "lucide-react";
 import AddSubjectForm from "../components/AddSubjectForm";
 import SubjectCard from "../components/SubjectCard";
 import type { Subject } from "../types/subject";
 
+const STORAGE_KEY = "attendanceSubjects";
+
+const DEFAULT_SUBJECTS: Subject[] = [
+  {
+    id: crypto.randomUUID(),
+    code: "CSE2001",
+    name: "Operating Systems",
+    attendedClasses: 32,
+    totalClasses: 40,
+    targetAttendancePercentage: 75,
+  },
+  {
+    id: crypto.randomUUID(),
+    code: "CSE2005",
+    name: "DBMS",
+    attendedClasses: 15,
+    totalClasses: 20,
+    targetAttendancePercentage: 75,
+  },
+];
+
 function HomePage() {
-  const [subjects, setSubjects] = useState<Subject[]>([
-    {
-      id: crypto.randomUUID(),
-      code: "CSE2001",
-      name: "Operating Systems",
-      attendedClasses: 32,
-      totalClasses: 40,
-      targetAttendancePercentage: 75,
-    },
-    {
-      id: crypto.randomUUID(),
-      code: "CSE2005",
-      name: "DBMS",
-      attendedClasses: 15,
-      totalClasses: 20,
-      targetAttendancePercentage: 75,
-    },
-  ]);
+  const [subjects, setSubjects] = useState<Subject[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Load subjects from localStorage on mount
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        setSubjects(JSON.parse(stored));
+      } else {
+        setSubjects(DEFAULT_SUBJECTS);
+      }
+    } catch (error) {
+      console.error("Failed to load subjects from localStorage:", error);
+      setSubjects(DEFAULT_SUBJECTS);
+    }
+    setIsLoaded(true);
+  }, []);
+
+  // Save subjects to localStorage whenever they change
+  useEffect(() => {
+    if (isLoaded) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(subjects));
+      } catch (error) {
+        console.error("Failed to save subjects to localStorage:", error);
+      }
+    }
+  }, [subjects, isLoaded]);
 
   function addSubject(subject: Subject) {
     setSubjects((prev) => [...prev, subject]);
