@@ -3,7 +3,7 @@ import { Navigate } from "react-router";
 import type { RouteObject } from "react-router";
 import AppShell from "@/layouts/AppShell";
 
-const DashboardPage = lazy(() => import("@/pages/DashboardPage"));
+const DashboardPage = lazy(() => import("@/pages/Dashboard"));
 const SchedulePage = lazy(() => import("@/pages/SchedulePage"));
 const AttendancePage = lazy(() => import("@/pages/AttendancePage"));
 const MarksPage = lazy(() => import("@/pages/MarksPage"));

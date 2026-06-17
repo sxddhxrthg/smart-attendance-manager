@@ -10,18 +10,18 @@ Zenith Grade is an **Academic Operating System** designed for SRM students. What
 Inspired by the design philosophies of Apple, Linear, Vercel, Arc Browser, and Raycast, Zenith Grade provides a fast, keyboard-first, and beautifully animated interface.
 
 ### Planned Modules (Phase 1-3)
-- **Dashboard:** Your academic command center.
-- **Schedule:** Manage your classes and timetable.
-- **Attendance:** Track, manage, and optimize your attendance.
-- **Marks:** Track your internal and external assessments.
-- **CGPA Planner:** Simulate and plan your grade point average.
-- **Analytics:** Insights and trends across your academic data.
-- **Calendar:** Academic calendar, exam dates, and holidays.
-- **Faculty Finder:** Locate faculty cabins and view schedules.
-- **Notes:** Organize your study materials.
-- **AI Assistant:** Your personal academic copilot.
-- **Placement Tracker:** Monitor applications and interviews.
-- **Study Planner:** Schedule tasks and prepare for exams.
+- [x] **Dashboard:** Your academic command center.
+- [ ] **Schedule:** Manage your classes and timetable.
+- [x] **Attendance:** Track, manage, and optimize your attendance.
+- [ ] **Marks:** Track your internal and external assessments.
+- [ ] **CGPA Planner:** Simulate and plan your grade point average.
+- [ ] **Analytics:** Insights and trends across your academic data.
+- [ ] **Calendar:** Academic calendar, exam dates, and holidays.
+- [ ] **Faculty Finder:** Locate faculty cabins and view schedules.
+- [ ] **Notes:** Organize your study materials.
+- [ ] **AI Assistant:** Your personal academic copilot.
+- [ ] **Placement Tracker:** Monitor applications and interviews.
+- [ ] **Study Planner:** Schedule tasks and prepare for exams.
 
 ## Tech Stack
 - **Framework:** React 19 + TypeScript
